@@ -2,7 +2,7 @@
 
 var newNode = require('./create.js');
 
-class LinkedList{
+class Delete{
     constructor(){
         this.head = null;
         this.size = 0;
@@ -10,7 +10,7 @@ class LinkedList{
 
 
     deletefromBeg(element){
-        var node =  new newNode(element);
+      //  var node =  new newNode(element);
         var temp; // taking temp variable to store head value
         //check weather linked list is empty or not
         if(this.head == null){

@@ -2,7 +2,7 @@
 
 var newNode = require('./create.js');
 
-class LinkedList{
+class Insert{
     constructor(){
         this.head = null;
         this.size = 0;
@@ -80,9 +80,8 @@ class LinkedList{
     }
 }
 
-var list = new LinkedList();
+var list = new Insert();
 list.insert(10);
-
 list.insert(20);
 list.printList();
 list.insertAtEnd(30);
