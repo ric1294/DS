@@ -1,40 +1,47 @@
-class Queue{
-    constructor(){
-        this.items = [];
-    }
+class Queue {
+  constructor() {
+    this.items = [];
+    this.head = 0;
+    this.tail = 0;
+  }
 
-    enqueue(element){
-        //this will add the element at the rear 
-        this.items.push(element)
-    }
+  enqueue(element) {
+    this.elements[this.tail] = element;
+    this.tail++;
+    //this will add the element at the rear
+    this.items.push(element);
+  }
 
-    dequeue(){
-        if(this.items.length > 0){
-            return this.items.shift();
-        }else{
-            return "Underflow";
-        }
+  dequeue() {
+    if (this.items.length > 0) {
+      const item = this.elements[this.head];
+      delete this.elements[this.head];
+      this.head++;
+      return item;
+    } else {
+      return "Underflow";
     }
-    front(){
-        if(this.items.length == 0){
-            return "Queue is empty"
-        }else{
-            return this.items[0];
-        }
+  }
+  front() {
+    // peek()
+    if (this.items.length == 0) {
+      return "Queue is empty";
+    } else {
+      return this.items[this.head];
     }
+  }
 
-    isEmpty(){
-        return this.items.length == 0;
-    }
+  isEmpty() {
+    return this.items.length == 0;
+  }
 
-    printQueue(){
-        var str = "";
-        for(var i = 0; i<this.items.length; i++){
-            str += this.items[i]+"";
-        }
-        return str;
+  printQueue() {
+    var str = "";
+    for (var i = 0; i < this.items.length; i++) {
+      str += this.items[i] + "";
     }
-
+    return str;
+  }
 }
 
 var queue = new Queue();
